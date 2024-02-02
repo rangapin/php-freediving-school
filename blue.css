@@ -1,0 +1,22 @@
+.blue-mode {
+    --bg-primary: #2563EB; /* Blue Background Color */
+    --text-primary: #FFFFFF; /* White Text Color */
+    --bg-secondary: #1E40AF; /* Darker Blue Background Color (for navbar) */
+    --text-secondary: #FFFFFF; /* White Text Color (for navbar) */
+}
+
+.blue-mode .bg-black {
+    background-color: var(--bg-primary);
+}
+
+.blue-mode .text-white {
+    color: var(--text-primary);
+}
+
+.blue-mode .bg-blue-500 {
+    background-color: var(--bg-secondary);
+}
+
+.blue-mode .text-light {
+    color: var(--text-secondary);
+}
