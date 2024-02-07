@@ -44,20 +44,19 @@
         </div>
     </nav>
 
-
-
-
-    <!-- Hero Section -->
-    <section id="home" class="bg-cover bg-center h-screen w-full flex items-center relative"
-        style="background-image: url('images/m5.png');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="container mx-auto text-white text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to 974 Freedivers</h1>
-            <p class="text-lg md:text-xl mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim?</p>
-            <a href="#education"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full">Explore Education</a>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section id="home" class="relative bg-cover bg-center h-screen w-full flex items-center" style="background-image: url('images/m5.png');">
+">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <!-- Button with fixed position -->
+    <div class="absolute bottom-96 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <a href="#education" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-full">Explore Education</a>
+    </div>
+    <div class="container mx-auto text-white text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to 974 Freedivers</h1>
+        <p class="text-lg md:text-xl mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim?</p>
+    </div>
+</section>
 
     <!-- Education Section -->
     <section id="education" class="container bg-gray-200 mx-auto p-8 m-4 flex items-center justify-center">
@@ -266,7 +265,7 @@
     </footer>
 
 
-    <!-- JavaScript for Blue Mode Toggle
+    <!-- JavaScript for Blue Mode Toggle -->
     <script>
         const blueModeToggle = document.getElementById('blueModeToggle');
         const body = document.body;
@@ -276,7 +275,7 @@
         });
     </script>
 
-    Smooth Scroll Library (You can include your preferred smooth scroll library)
+    <!-- Smooth Scroll Library  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
     <script>
         
