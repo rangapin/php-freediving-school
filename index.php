@@ -204,17 +204,17 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="container mx-auto p-8 flex">
+<section id="contact" class="container mx-auto p-8 flex flex-col md:flex-row items-center justify-center">
     <!-- Google Maps Area -->
     <div class="w-full md:w-1/2 mr-4">
         <!-- Google Maps Embed -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387600.1689150903!2d-74.25987519936735!3d40.697670747418034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f0839%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1644154523848!5m2!1sen!2s" 
-                width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <!-- Contact Form -->
     <div class="w-full md:w-1/2">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us</h2>
-        <form id="contactForm" class="max-w-lg mx-auto" action="submit.php" method="post">
+        <form id="contactForm" class="max-w-lg mx-auto" action="submit.php" method="post" onsubmit="return showMessage()">
             <!-- Name -->
             <div class="mb-4">
                 <label for="name" class="block font-semibold mb-2">Name</label>
@@ -239,17 +239,22 @@
                 <textarea id="message" name="message" rows="5" placeholder="Enter your message"
                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"></textarea>
             </div>
-            <!-- Submit Button Container -->
-            <div class="flex justify-center">
-                <!-- Submit Button -->
-                <button type="submit"
-                        class="bg-blue-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Submit
-                </button>
-            </div>
+            <!-- Submit Button -->
+            <button type="submit"
+                    class="bg-blue-500 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Submit
+            </button>
         </form>
     </div>
 </section>
 
+<!-- Modal Dialog -->
+<div id="myModal" class="modal hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg p-8">
+        <div class="text-2xl font-semibold mb-4">Message Sent!</div>
+        <div class="text-gray-700">Thank you for contacting us. Your message has been sent successfully.</div>
+        <button id="closeModal" class="bg-blue-500 text-white font-semibold px-4 py-2 mt-6 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">Close</button>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="bg-black text-white p-8">
@@ -264,6 +269,27 @@
         </div>
     </footer>
 
+
+<!-- JavaScript for showing/hiding modal dialog and resetting form data -->
+<script>
+    function showMessage() {
+        // Show the modal dialog
+        var modal = document.getElementById('myModal');
+        modal.classList.remove('hidden');
+
+        // Reset the form data
+        var form = document.getElementById('contactForm');
+        form.reset();
+
+        return false; // Return false to prevent form submission
+    }
+
+    // Close modal dialog when Close button is clicked
+    document.getElementById('closeModal').addEventListener('click', function() {
+        var modal = document.getElementById('myModal');
+        modal.classList.add('hidden');
+    });
+</script>
 
     <!-- JavaScript for Blue Mode Toggle -->
     <script>
